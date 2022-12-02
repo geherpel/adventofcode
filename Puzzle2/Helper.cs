@@ -25,8 +25,7 @@ namespace Puzzle2
         public static int CalcPoints(RPS opp, RPS you)
         {
             var points = (int)you;
-            if ((opp == RPS.Rock && you == RPS.Paper) || (opp == RPS.Paper && you == RPS.Scissors) ||
-                (opp == RPS.Scissors && you == RPS.Rock))
+            if ((int)you == (int)opp % 3 + 1)
             {
                 points += (int)Outcome.Win;
             }
@@ -47,7 +46,7 @@ namespace Puzzle2
             }
             else if (you == Outcome.Win)
             {
-                points += ((int)opp % 3) + 1;
+                points += (int)opp % 3 + 1;
             }
             else
             {
